@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profiles Online Near You</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f4f4;
+text-align:center;
+}
+
+header{
+background:#ff3b6b;
+color:white;
+padding:20px;
+font-size:22px;
+font-weight:bold;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin:15px;
+}
+
+.stat-box{
+background:white;
+padding:10px 15px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+font-size:13px;
+}
+
+.stat-box span{
+font-weight:bold;
+font-size:18px;
+color:#ff3b6b;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+padding:10px;
+transition:0.2s;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.name{
+font-weight:bold;
+margin-top:6px;
+}
+
+.status{
+color:green;
+font-size:13px;
+}
+
+button{
+background:#ff3b6b;
+border:none;
+color:white;
+padding:9px 14px;
+margin-top:8px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e1305c;
+}
+
+.feed{
+position:fixed;
+bottom:15px;
+left:15px;
+background:white;
+padding:10px 14px;
+border-radius:8px;
+box-shadow:0 2px 10px rgba(0,0,0,0.2);
+font-size:13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+Women Online Near You
+</header>
+
+<div class="stats">
+
+<div class="stat-box">
+<span id="onlineCount">132</span>
+<div>People browsing now</div>
+</div>
+
+<div class="stat-box">
+<span id="viewCount">2411</span>
+<div>Profiles viewed today</div>
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+<div class="name">Amina, 23</div>
+<div class="status">Online now</div>
+<a href=" https://www.effectivegatecpm.com/nf3ctkf9h4?key=b5b21051c6879671b8d2ad81cc1a2ea1  ">
+<button>View Profile</button>
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb">
+<div class="name">Zola, 24</div>
+<div class="status">Active now</div>
+<a href=" https://www.effectivegatecpm.com/nf3ctkf9h4?key=b5b21051c6879671b8d2ad81cc1a2ea1  ">
+<button>View Profile</button>
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91">
+<div class="name">Nia, 22</div>
+<div class="status">Online</div>
+<a href="https://www.effectivegatecpm.com/nf3ctkf9h4?key=b5b21051c6879671b8d2ad81cc1a2ea1  ">
+<button>View Profile</button>
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+<div class="name">Ama, 25</div>
+<div class="status">Active now</div>
+<a href=" https://www.effectivegatecpm.com/nf3ctkf9h4?key=b5b21051c6879671b8d2ad81cc1a2ea1  ">
+<button>View Profile</button>
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
+<div class="name">Tari, 21</div>
+<div class="status">Online now</div>
+<a href=" https://www.effectivegatecpm.com/nf3ctkf9h4?key=b5b21051c6879671b8d2ad81cc1a2ea1  ">
+<button>View Profile</button>
+</a>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7">
+<div class="name">Lola, 24</div>
+<div class="status">Active now</div>
+<a href=" https://www.effectivegatecpm.com/nf3ctkf9h4?key=b5b21051c6879671b8d2ad81cc1a2ea1 ">
+<button>View Profile</button>
+</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="feed" id="activityFeed">
+Someone just viewed a profile
+</div>
+
+<script>
+
+let online = 120 + Math.floor(Math.random()*40);
+let views = 2000 + Math.floor(Math.random()*500);
+
+setInterval(function(){
+
+online += Math.floor(Math.random()*3)-1;
+views += Math.floor(Math.random()*5);
+
+document.getElementById("onlineCount").innerText = online;
+document.getElementById("viewCount").innerText = views;
+
+},4000);
+
+const activities = [
+"Amina received a new like",
+"Zola updated her photos",
+"Nia is browsing profiles",
+"Ama joined recently",
+"Tari is online now",
+"Lola updated her profile"
+];
+
+setInterval(function(){
+
+let random = Math.floor(Math.random()*activities.length);
+document.getElementById("activityFeed").innerText = activities[random];
+
+},5000);
+
+</script>
+
+</body>
+  </html>
